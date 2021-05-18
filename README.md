@@ -1,4 +1,4 @@
-# Rock, Paper, Scrissor (JS)
+# Rock, Paper, Scissor (JS)
 
 A little project to practice JQuery/DOM manipulation and CSS. 
 
