@@ -32,19 +32,19 @@ $(document).ready(function () {
 
   function selectIconToDisplay(playerAction) {
     if (playerAction === "rock") {
-      return "far fa-hand-rock fa-5x";
+      return "images/icon-rock.svg";
     } else if (playerAction === "paper") {
-      return "far fa-hand-paper fa-5x";
+      return "images/icon-paper.svg";
     } else {
-      return "far fa-hand-scissors fa-5x";
+      return "images/icon-scissors.svg";
     }
   }
 
   function displayPlayersActions() {
     let playerOneIcon = selectIconToDisplay(game.playerOneAction);
-    $("#player-1-action").addClass(playerOneIcon);
+    $("#player-1-action").attr("src", playerOneIcon);
     let playerTwoIcon = selectIconToDisplay(game.playerTwoAction);
-    $("#player-2-action").addClass(playerTwoIcon);
+    $("#player-2-action").attr("src", playerTwoIcon);
   }
 
   function renderGameResult() {
@@ -54,7 +54,7 @@ $(document).ready(function () {
   }
 
   function clearPreviousAction() {
-    $("#player-1-action").removeClass();
-    $("#player-2-action").removeClass();
+    $("#player-1-action").removeAttr("src");
+    $("#player-2-action").removeAttr("src");
   }
 });
