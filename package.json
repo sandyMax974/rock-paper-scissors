@@ -1,0 +1,19 @@
+{
+  "name": "rock-paper-scissor",
+  "version": "1.0.0",
+  "description": "A little project to practice JQuery/DOM manipulation and CSS.",
+  "main": "game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandyMax974/rock-paper-scissors.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sandyMax974/rock-paper-scissors/issues"
+  },
+  "homepage": "https://github.com/sandyMax974/rock-paper-scissors#readme"
+}

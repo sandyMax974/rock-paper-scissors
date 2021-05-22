@@ -4,7 +4,7 @@ $(document).ready(function () {
   $("#rock").click(function () {
     game.playerOneActionSelection("rock");
     game.botActionSelection();
-    announceResult(game.comparePlayersActions());
+    setUpResult(game.comparePlayersActions());
     clearPreviousAction();
     renderGameResult();
     updateScores();
@@ -13,7 +13,7 @@ $(document).ready(function () {
   $("#paper").click(function () {
     game.playerOneActionSelection("paper");
     game.botActionSelection();
-    announceResult(game.comparePlayersActions());
+    setUpResult(game.comparePlayersActions());
     clearPreviousAction();
     renderGameResult();
     updateScores();
@@ -22,7 +22,7 @@ $(document).ready(function () {
   $("#scissors").click(function () {
     game.playerOneActionSelection("scissors");
     game.botActionSelection();
-    announceResult(game.comparePlayersActions());
+    setUpResult(game.comparePlayersActions());
     clearPreviousAction();
     renderGameResult();
     updateScores();
@@ -56,7 +56,7 @@ $(document).ready(function () {
     $("#player-2-result").addClass(game.playerTwoAction);
   }
 
-  function announceResult(results) {
+  function setUpResult(results) {
     $("#game-result-text").html(results);
   }
 
