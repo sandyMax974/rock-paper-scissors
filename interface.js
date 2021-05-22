@@ -4,7 +4,7 @@ $(document).ready(function () {
   $("#rock").click(function () {
     game.playerOneActionSelection("rock");
     game.botActionSelection();
-    game.comparePlayersActions();
+    announceResult(game.comparePlayersActions());
     clearPreviousAction();
     renderGameResult();
     updateScores();
@@ -13,7 +13,7 @@ $(document).ready(function () {
   $("#paper").click(function () {
     game.playerOneActionSelection("paper");
     game.botActionSelection();
-    game.comparePlayersActions();
+    announceResult(game.comparePlayersActions());
     clearPreviousAction();
     renderGameResult();
     updateScores();
@@ -22,7 +22,7 @@ $(document).ready(function () {
   $("#scissors").click(function () {
     game.playerOneActionSelection("scissors");
     game.botActionSelection();
-    game.comparePlayersActions();
+    announceResult(game.comparePlayersActions());
     clearPreviousAction();
     renderGameResult();
     updateScores();
@@ -56,6 +56,10 @@ $(document).ready(function () {
     $("#player-2-result").addClass(game.playerTwoAction);
   }
 
+  function announceResult(results) {
+    $("#game-result-text").html(results);
+  }
+
   function renderGameResult() {
     displayPlayersActions();
     hideActionsAndDisplaySelection();
@@ -71,6 +75,7 @@ $(document).ready(function () {
     $("#game-result").css("display", "none");
     $("#actions").css("display", "block");
     $("#replay").css("display", "none");
+    $("#game-result-text").html("");
   }
 
   function clearPreviousAction() {
@@ -79,4 +84,16 @@ $(document).ready(function () {
     $("#player-2-action").removeAttr("src");
     $("#player-2-action").removeClass(game.playerTwoAction); // issue with these
   }
+
+  $("#rules-modal").click(function () {
+    $("#myModal").css("display", "block");
+  });
+
+  $("#close").click(function () {
+    $("#myModal").css("display", "none");
+  });
+
+  $("#myModal").click(function () {
+    $("#myModal").css("display", "none");
+  });
 });

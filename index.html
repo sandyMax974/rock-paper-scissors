@@ -8,10 +8,8 @@
   <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-  <script
-  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
   <div class="container">
     <div class="header-box">
       <h1>Rock </br>
@@ -23,20 +21,20 @@
       </div>
     </div>
   
-  
-  
     <div class="row" id="game-result">
       <div class="column">
-        You picked
+        <h2>You picked</h2>
         <button class="action-icon" id="player-1-result"><img id="player-1-action" /></button>
       </div>
       <div class="column">
-        The house picked
+        <h2>The house picked</h2>
         <button class="action-icon" id="player-2-result"><img id="player-2-action" /></button>
       </div>
     </div>
   
-    <button class="replay" id="replay">Replay</button>
+    <h1 id="game-result-text"></h1>
+    <button class="replay" id="replay">Play again</button>
+  
 
     <div class="actions" id="actions">
       <button class="action-icon rock" name="rock" id="rock">
@@ -48,6 +46,16 @@
       <button class="action-icon scissors" name="scissors" id="scissors">
         <img src="images/icon-scissors.svg" alt="scissors-icon" />
       </button>
+    </div>
+  
+    <button class="rules" id="rules-modal">Rules</button>
+  
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>Rules</h1>
+        <img src="images/image-rules.svg" alt="game-rules" />
+      </div>
     </div>
   
     <div class="attribution">

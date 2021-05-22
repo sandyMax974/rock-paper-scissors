@@ -39,9 +39,11 @@ class Game {
     if (this.playerOneAction === this.playerTwoAction) {
       return "draw";
     } else if (winningComboOne || winningComboTwo || winningComboThree) {
-      return (this.playerOneScore += 1);
+      this.playerOneScore += 1;
+      return "You win";
     } else {
-      return (this.playerTwoScore += 1);
+      this.playerTwoScore += 1;
+      return "You lose";
     }
   }
 }
