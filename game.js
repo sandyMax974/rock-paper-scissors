@@ -10,10 +10,6 @@ class Game {
     return (this.playerOneAction = action);
   }
 
-  // playerTwoActionSelection(action) {
-  //   this.playerTwoAction == action;
-  // }
-
   botActionSelection() {
     return (this.playerTwoAction = this.getRandomAction());
   }

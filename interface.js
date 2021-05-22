@@ -6,7 +6,8 @@ $(document).ready(function () {
     game.botActionSelection();
     game.comparePlayersActions();
     clearPreviousAction();
-    setTimeout(renderGameResult(), 3000);
+    renderGameResult();
+    updateScores();
   });
 
   $("#paper").click(function () {
@@ -14,7 +15,8 @@ $(document).ready(function () {
     game.botActionSelection();
     game.comparePlayersActions();
     clearPreviousAction();
-    setTimeout(renderGameResult(), 3000);
+    renderGameResult();
+    updateScores();
   });
 
   $("#scissors").click(function () {
@@ -22,7 +24,12 @@ $(document).ready(function () {
     game.botActionSelection();
     game.comparePlayersActions();
     clearPreviousAction();
-    setTimeout(renderGameResult(), 3000);
+    renderGameResult();
+    updateScores();
+  });
+
+  $("#replay").click(function () {
+    displayActionsAndHideSelection();
   });
 
   function updateScores() {
@@ -43,18 +50,33 @@ $(document).ready(function () {
   function displayPlayersActions() {
     let playerOneIcon = selectIconToDisplay(game.playerOneAction);
     $("#player-1-action").attr("src", playerOneIcon);
+    $("#player-1-result").addClass(game.playerOneAction);
     let playerTwoIcon = selectIconToDisplay(game.playerTwoAction);
     $("#player-2-action").attr("src", playerTwoIcon);
+    $("#player-2-result").addClass(game.playerTwoAction);
   }
 
   function renderGameResult() {
     displayPlayersActions();
-    updateScores();
-    // $("#game-results").removeProp("visibility");
+    hideActionsAndDisplaySelection();
+  }
+
+  function hideActionsAndDisplaySelection() {
+    $("#game-result").css("display", "flex");
+    $("#actions").css("display", "none");
+    $("#replay").css("display", "block");
+  }
+
+  function displayActionsAndHideSelection() {
+    $("#game-result").css("display", "none");
+    $("#actions").css("display", "block");
+    $("#replay").css("display", "none");
   }
 
   function clearPreviousAction() {
     $("#player-1-action").removeAttr("src");
+    $("#player-1-action").removeClass(game.playerOneAction); // issue with these
     $("#player-2-action").removeAttr("src");
+    $("#player-2-action").removeClass(game.playerTwoAction); // issue with these
   }
 });
