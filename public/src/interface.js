@@ -5,7 +5,7 @@ $(document).ready(function () {
     game.playerOneActionSelection("rock");
     game.botActionSelection();
     setUpResult(game.comparePlayersActions());
-    clearPreviousAction();
+    // clearPreviousAction();
     renderGameResult();
     updateScores();
   });
@@ -14,7 +14,7 @@ $(document).ready(function () {
     game.playerOneActionSelection("paper");
     game.botActionSelection();
     setUpResult(game.comparePlayersActions());
-    clearPreviousAction();
+    // clearPreviousAction();
     renderGameResult();
     updateScores();
   });
@@ -23,13 +23,14 @@ $(document).ready(function () {
     game.playerOneActionSelection("scissors");
     game.botActionSelection();
     setUpResult(game.comparePlayersActions());
-    clearPreviousAction();
+    // clearPreviousAction();
     renderGameResult();
     updateScores();
   });
 
   $("#replay").click(function () {
     displayActionsAndHideSelection();
+    clearPreviousAction();
   });
 
   function updateScores() {
@@ -80,9 +81,9 @@ $(document).ready(function () {
 
   function clearPreviousAction() {
     $("#player-1-action").removeAttr("src");
-    $("#player-1-action").removeClass(game.playerOneAction); // issue with these
+    $("#player-1-result").removeClass(["rock", "paper", "scissors"]);
     $("#player-2-action").removeAttr("src");
-    $("#player-2-action").removeClass(game.playerTwoAction); // issue with these
+    $("#player-2-result").removeClass(["rock", "paper", "scissors"]);
   }
 
   $("#rules-modal").click(function () {
