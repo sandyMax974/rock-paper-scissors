@@ -4,7 +4,7 @@
   "description": "A little project to practice JQuery/DOM manipulation and CSS.",
   "main": "game.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sandyMax974/rock-paper-scissors/issues"
   },
-  "homepage": "https://github.com/sandyMax974/rock-paper-scissors#readme"
+  "homepage": "https://github.com/sandyMax974/rock-paper-scissors#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
